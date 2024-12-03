@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBSZ 8.5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="user-bar">
+        <span id="username-display" class="username-display"></span>
+        <button onclick="logout()" class="logout-button">Logout</button>
+    </div>
+
+    <div class="container">
+        <div class="title-block">
+            <h1>Announcements</h1>
+        </div>
+        <div class="content">
+            <p>This website is for shared files and information. This website is only for students in 8.5. Please do not share with other students. If you feel like any change is needed, please contact the class captains</p>
+        </div>
+        
+        <div class="title-block">
+            <h1>Homework</h1>
+            <a href="nov25-29.png" target="_blank">
+                <img src="nov25-29.png" alt="This picture failed to load. Contact class captains or check the Wechat group.">
+            </a>
+        </div>
+        
+        <div class="content">
+            <h2>Past Homework Files</h2>
+            <a href="oct14-18.pdf" class="button">Week October 14 - 18 Homework Document</a>
+            <a href="oct21-25.pdf" class="button">Week October 25 - 25 Homework Document</a>
+            <a href="oct28-nov01.pdf" class="button">Week October 28 - November 01 Homework Document</a>
+            <a href="nov04-08.pdf" class="button">Week November 04 - 08 Homework Document</a>
+            <a href="nov11-15.pdf" class="button">Week November 11 - 15 Homework Document</a>
+            <a href="nov18-22.pdf" class="button">Week November 11 - 22 Homework Document</a>
+        </div>
+        
+        <div class="title-block">
+            <h1>Test</h1>
+        </div>
+        <div class="content">
+            <h2>Current Test File</h2>
+            <p>Insert pic</p>
+            
+            <h2>Past Test Files</h2>
+            <p>Insert file buttons</p>
+        </div>
+    </div>
+
+    <button id="chatButton" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    " onclick="window.location.href='chat.html'">
+        Ask Students?
+    </button>
+
+    <script>
+        // 检查登录状态
+        function checkLogin() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            if (!currentUser) {
+                // 如果没有登录，重定向到登录页面
+                window.location.href = 'index.html';
+                return;
+            }
+            // 显示用户名
+            document.getElementById('username-display').textContent = currentUser.username;
+        }
+
+        // 登出函数
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        }
+
+        // 页面加载时检查登录状态
+        window.onload = checkLogin;
+    </script>
+</body>
+</html>

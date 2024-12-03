@@ -1,0 +1,169 @@
+/* 基本重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* 身体部分的基本样式 */
+  body {
+    font-family: 'Times New Roman', Times, serif; /* 默认字体 */
+    line-height: 1.6; /* 行高 */
+    color: #333; /* 文字颜色 */
+    background-color: #fff; /* 背景颜色 */
+    padding: 20px; /* 内边距 */
+  }
+  
+  /* 标题模块样式 */
+  .title-block {
+    background-color: #8febff; /* 稍微深一点的蓝色填充 */
+    padding: 20px; /* 内边距 */
+    margin-bottom: 20px; /* 模块间的间距 */
+    border-radius: 8px; /* 圆角 */
+    text-align: center; /* 文字居中 */
+    color: #333; /* 文字颜色 */
+  }
+  
+  /* 标题样式 */
+  .title-block h1 {
+    font-family: 'Georgia', serif; /* 标题字体 */
+    margin: 0; /* 清除默认外边距 */
+    font-size: 32px; /* 增大标题字体 */
+  }
+  
+  /* 段落样式 */
+  p {
+    margin-bottom: 20px; /* 底部外边距 */
+  }
+  
+  /* 图片样式 */
+  .title-block img {
+    width: 100%; /* 图片宽度与 .title-block 一致 */
+    border-radius: 8px; /* 圆角 */
+    display: block; /* 确保图片独占一行 */
+    margin-top: 20px; /* 图片与标题之间的间距 */
+  }
+  
+  /* 按钮样式 */
+  .button {
+    display: block; /* 改为block使按钮独占一行 */
+    padding: 10px 20px;
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* 文字颜色 */
+    background-color: #e0f7fa; /* 浅蓝色背景 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #cfd8dc; /* 悬停时更深的浅蓝色 */
+  }
+  
+  /* 分割线样式 */
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+  }
+  
+  /* 示例使用容器包裹所有内容 */
+  .container {
+    max-width: 800px; /* 最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
+    padding: 20px; /* 内边距 */
+  }
+  
+  /* 登录表单样式 */
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #8febff;
+    box-shadow: 0 0 5px rgba(143, 235, 255, 0.5);
+  }
+  
+  /* 拒绝访问页面样式 */
+  .deny-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .deny-message p {
+    margin-bottom: 10px;
+    color: #d32f2f;
+  }
+  
+  /* 用户信息栏样式 */
+  .user-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #8febff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .username-display {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .logout-button {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px 15px;
+    background-color: #e0f7fa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #cfd8dc;
+  }
+  
+  /* 调整container的上边距，为用户栏留出空间 */
+  .container {
+    margin-top: 60px;
+  }
+  
+  /* 修改登录按钮样式 */
+  .login-button {
+    font-family: 'Times New Roman', Times, serif;
+  }

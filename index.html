@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBSZ 8.5 User Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title-block">
+            <h1>User Login</h1>
+        </div>
+
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="email">Email or Username: </label>
+                <input type="text" id="email" name="email" class="button" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" class="button" required>
+            </div>
+
+            <button type="submit" class="button login-button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // User database
+        const users = [
+            { username: 'demo', email: 'demo@qq.com', password: 'demo' },
+            { username: 'admin', email: 'admin@qq.com', password: 'admin' },
+            { username: 'Amy Yuan', email: 'ziqian.yuan71326-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Andy Pan', email: 'haoze.pan90491-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Carol Qin', email: 'yiyang.qin602423-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Emily Yuan', email: 'jiayi.yuan602319-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Estrella Chen', email: 'jiayi.chen602988-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Franklin Wu', email: 'franklin.wu16067-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Hannah Dong', email: 'yuhan.dong15634-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Harry Liu', email: 'haoyi.liu90461-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Jennie Fan', email: 'jingyi.fan602385-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Kitty Zhao', email: 'jiamu.zhao90484-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Leo Chen', email: 'lihong.chen602450-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Mason Lou', email: 'zhifan.lou602710-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Matthew Hao', email: 'shijie.hao90449-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Mike Huang', email: 'yuanyuan.wan90401-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Muxi Yao', email: 'muxi.yao90476-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Nickie Cui', email: 'nickie.cui15621-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Ray Zhao', email: 'xinrui.zhao602589-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Rosa Zong', email: 'ruoheng.zong90486-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Ruby Wang', email: 'borui.wang15885-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Selina Deng', email: 'xiaoqin.deng15625-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Sheldon Chen', email: 'yushu.chen90436-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Sammy Liu', email: 'weiyi.liu602388-bbsz@basischina.com', password: 'BBSZ85' },
+            { username: 'Season Xu', email: 'ziyang.xu602322-bbsz@basischina.com', password: 'BBSZ85' }
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailOrUsername = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // 查找匹配的用户
+            const matchedUser = users.find(u => 
+                (u.email === emailOrUsername || u.username === emailOrUsername) && 
+                u.password === password
+            );
+
+            if (matchedUser) {
+                // 登录成功
+                localStorage.setItem('currentUser', JSON.stringify(matchedUser));
+                alert(`Welcome Back, ${matchedUser.username}!`);
+                window.location.href = "access.html";
+            } else {
+                // 登录失败
+                window.location.href = "deny.html";
+            }
+        });
+    </script>
+
+    <script src="/js/todo.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html> 
